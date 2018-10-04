@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <h1>Lista Mensalidades</h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+                    <form action="{% url 'core_mensalidade_novo' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form|bootstrap }}
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+        </div>
+
+               <div class="col-sm-6">
+            <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Aluno</th>
+      <th scope="col">Mês</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Data Pagamento</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for mensalidade in mensalidades %}
+    <tr>
+      <th scope="row">{{mensalidade.id}}</th>
+        <td> <a href="{% url 'core_mensalidade_update' mensalidade.id %}">{{mensalidade.aluno}}</a></td>
+      <td>{{mensalidade.mes}}</td>
+        <td>{{mensalidade.valorPago}}</td>
+        <td>{{mensalidade.dataPagamento}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+        </div>
+
+
+
+{% endblock %}

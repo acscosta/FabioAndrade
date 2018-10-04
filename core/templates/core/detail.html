@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<br>
+<br>
+
+<h2>Perfil - {{aluno}}</h2>
+
+<form method="POST" action="{% url 'core_aluno_detalhe' aluno.id %}" >
+
+    <br>
+    <h6>Nome - {{aluno.nome}}</h6>
+    <h6>Faixa - {{aluno.faixa}}</h6>
+    <h6>Data Graduação - {{aluno.datagraduacao}}</h6>
+    <h6>Data Nascimento - {{aluno.datanascimento}}</h6>
+    <h6>Telefone - {{aluno.telefone}}</h6>
+    <h6>Status - {{aluno.status}}</h6>
+    <h6>Observação - {{aluno.observacao}}</h6>
+<br>
+    {% csrf_token %}
+<button class="btn btn-outline-info"><a href="{% url 'core_aluno_update' aluno.id %}">Atualizar</a></button>
+<button class="btn btn-outline-info"><a href="{% url 'core_aluno_delete' aluno.id %}">Deletar</a></button>
+
+</form>
+
+
+{% endblock %}

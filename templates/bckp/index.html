@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block menu %}
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'core_home' %}">Home</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'core_lista_alunos' %}">Pessoa</a>
+      <a class="dropdown-item" href="{% url 'core_lista_mensalidades' %}">Mensalidade</a>
+    </div>
+  </li>
+
+    {% if user.is_authenticated %}
+    <li class="nav-item">
+        <a class="nav-link disabled"  href="">Olá, {{user}}</a>
+    </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% else %}
+
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+    </li>
+</ul>
+<hr>
+    {% endif %}
+
+{% endblock %}
+
+{% block main %}
+    <hr>
+    <div class="row">
+        <div class="col">
+            <h1>Seja Bem Vindo ao Site!</h1>
+        </div>
+    </div>
+
+{% endblock %}
