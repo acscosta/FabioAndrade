@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b44a82ea-62b2-4e30-b4cd-7e178d7fb94b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/core/templates/core/detail_mensalidade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/delete_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/delete_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/delete_mensalidade_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/delete_mensalidade_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/lista_alunos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/lista_alunos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/lista_mensalidades.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/lista_mensalidades.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/templates/core/update_mensalidade.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/templates/core/update_mensalidade.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controle/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/controle/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/core/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -44,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/core/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="81" column="29" lean-forward="true" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -56,16 +47,25 @@
         <entry file="file://$PROJECT_DIR$/core/templates/core/lista_alunos.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-153">
-              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lista_mensalidades.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lista_mensalidades.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/templates/core/lista_mensalidades.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+            <state relative-caret-position="323">
+              <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controle/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -120,7 +120,6 @@
         <option value="$PROJECT_DIR$/core/templates/core/index.html" />
         <option value="$PROJECT_DIR$/core/templates/core/detalhes.html" />
         <option value="$PROJECT_DIR$/templates/website/base.html" />
-        <option value="$PROJECT_DIR$/controle/settings.py" />
         <option value="$PROJECT_DIR$/templates/website/css/freelancer.min.css" />
         <option value="$PROJECT_DIR$/templates/website/css/freelancer.css" />
         <option value="$PROJECT_DIR$/static/bootstrap/css/freelancer.min.css" />
@@ -139,10 +138,11 @@
         <option value="$PROJECT_DIR$/core/urls.py" />
         <option value="$PROJECT_DIR$/core/views.py" />
         <option value="$PROJECT_DIR$/core/templates/core/lista_mensalidades.html" />
+        <option value="$PROJECT_DIR$/controle/settings.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1" />
     <option name="y" value="7" />
     <option name="width" value="651" />
@@ -165,20 +165,7 @@
             <path>
               <item name="FabioAndrade" type="b2602c69:ProjectViewProjectNode" />
               <item name="FabioAndrade" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FabioAndrade" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FabioAndrade" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FabioAndrade" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FabioAndrade" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="controle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -475,13 +462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controle/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="71" lean-forward="true" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/bootstrap/css/freelancer.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -562,7 +542,7 @@
     <entry file="file://$PROJECT_DIR$/core/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
@@ -576,7 +556,7 @@
     <entry file="file://$PROJECT_DIR$/core/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="81" column="29" lean-forward="true" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -596,14 +576,21 @@
     <entry file="file://$PROJECT_DIR$/core/templates/core/lista_alunos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-153">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/templates/core/lista_mensalidades.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        <state relative-caret-position="323">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controle/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
         </state>
       </provider>
     </entry>
