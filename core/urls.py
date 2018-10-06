@@ -4,7 +4,7 @@ from .views import (home, lista_alunos, lista_mensalidades,
                     aluno_novo, mensalidade_novo,
                     aluno_update, mensalidade_update,
                     aluno_delete, mensalidade_delete,
-                    aluno_detalhe
+                    aluno_detalhe, mensalidade_detalhe
 )
 
 
@@ -21,6 +21,6 @@ urlpatterns = [
     url(r'^mensalidades-novo/$', mensalidade_novo, name='core_mensalidade_novo'),
     url(r'^mensalidade-update/(?P<id>\d+)/$', mensalidade_update, name='core_mensalidade_update'),
     url(r'^mensalidade-delete/(?P<id>\d+)/$', mensalidade_delete, name='core_mensalidade_delete'),
-
+    url(r'^mensalidade-detalhe/(?P<id>\d+)/$', mensalidade_detalhe, name='core_mensalidade_detalhe'),
 
 ]

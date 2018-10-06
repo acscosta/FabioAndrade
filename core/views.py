@@ -76,6 +76,15 @@ def aluno_detalhe(request, id):
         return render(request, 'core/detail.html', {'aluno': aluno})
 
 @login_required
+def mensalidade_detalhe(request, id):
+    mensalidade = Mensalidade.objects.get(id=id)
+    if request.method == 'POST':
+        mensalidade.detalhe()
+        return redirect('core_lista_mensalidades')
+    else:
+        return render(request, 'core/detail_mensalidade.html', {'mensalidade': mensalidade_detalhe})
+
+@login_required
 def aluno_delete(request, id):
     aluno = Aluno.objects.get(id=id)
     if request.method == 'POST':

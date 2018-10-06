@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<br>
+<br>
+
+<h2>Mensalidade - {{mensalidade}}</h2>
+
+<form method="POST" action="{% url 'core_mensalidade_detalhe' mensalidade.id %}" >
+
+    <br>
+    <h6>Nome - {{mensalidade.aluno}}</h6>
+    <h6>Mês - {{mensalidade.mes}}</h6>
+    <h6>Data Pagamento - {{mensalidade.dataPagamento}}</h6>
+    <h6>Valor Pago - {{mensalidade.valorPago}}</h6>
+    <h6>Categoria - {{mensalidade.categoria}}</h6>
+
+<br>
+    {% csrf_token %}
+<button class="btn btn-outline-info"><a href="{% url 'core_mensalidade_update' mensalidade.id %}">Atualizar</a></button>
+<button class="btn btn-outline-info"><a href="{% url 'core_mensalidade_delete' mensalidade.id %}">Deletar</a></button>
+
+</form>
+
+
+{% endblock %}

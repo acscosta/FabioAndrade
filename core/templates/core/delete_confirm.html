@@ -2,12 +2,13 @@
 
 {% block main %}
 
+<br>
 
 <h2>Tem certeza que quer deletar: {{aluno}}</h2>
 
 <form method="POST" action="{% url 'core_aluno_delete' aluno.id %}" >
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Deletar</button>
+    <button type="submit" class="btn btn-outline-info">Deletar</button>
 
 </form>
 

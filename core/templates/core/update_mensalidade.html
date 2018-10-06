@@ -2,19 +2,18 @@
 
 {% block main %}
 
-<h2>Updating Mensalidade: {{ mensalidade }}</h2>
-
+<br>
+<h2>Atualizando Mensalidade: {{ mensalidade }}</h2>
+<br>
 
 <form action="{% url 'core_mensalidade_update' mensalidade.id %}" method="POST">
     {% csrf_token %}
 
     {{form.as_p}}
 
-    <button type="submit">Salvar</button>
+<button type="submit" class="btn btn-outline-info">Salvar</button>
+<button class="btn btn-outline-info"><a href="{% url 'core_mensalidade_delete' mensalidade.id %}">Deletar</a></button>
 </form>
-
-
-<a href="{% url 'core_mensalidade_delete' mensalista.id %}">Deletar</a>
 
 
 {% endblock %}
