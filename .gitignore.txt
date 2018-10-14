@@ -1,5 +1,6 @@
 myvenv
 .DS_Store
 .idea
+*.sqlite3
 *pyc
 *.bootstrapform
