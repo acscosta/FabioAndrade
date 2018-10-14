@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Aluno, Mensalidade
-from .forms import (AlunoForm, MensalidadeForm)
+from .models import Aluno, Mensalidade, Conta
+from .forms import (AlunoForm, MensalidadeForm, ContaForm)
 from django.contrib.auth.decorators import login_required
 
 @login_required
@@ -16,6 +16,13 @@ def lista_alunos(request):
     return render(request, 'core/lista_alunos.html', data)
 
 @login_required
+def lista_contas(request):
+    contas = Conta.objects.all()
+    form = ContaForm()
+    data = {'contas': contas, 'form':form}
+    return render(request, 'core/lista_contas.html', data)
+
+@login_required
 def lista_mensalidades(request):
     mensalidades = Mensalidade.objects.all()
     form = MensalidadeForm()
@@ -28,6 +35,13 @@ def aluno_novo(request):
     if form.is_valid():
         form.save()
     return redirect('core_lista_alunos')
+
+@login_required
+def conta_novo(request):
+    form = ContaForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    return redirect('core_lista_contas')
 
 @login_required
 def mensalidade_novo(request):
@@ -52,6 +66,21 @@ def aluno_update(request, id):
         return render(request, 'core/update_aluno.html', data)
 
 @login_required
+def conta_update(request, id):
+    data = {}
+    conta = Conta.objects.get(id=id)
+    form = ContaForm(request.POST or None, instance=conta)
+    data['conta'] = conta
+    data['form'] = form
+
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('core_lista_contas')
+    else:
+        return render(request, 'core/update_conta.html', data)
+
+@login_required
 def mensalidade_update(request, id):
     data = {}
     mensalidade = Mensalidade.objects.get(id=id)
@@ -74,6 +103,15 @@ def aluno_detalhe(request, id):
         return redirect('core_lista_alunos')
     else:
         return render(request, 'core/detail.html', {'aluno': aluno})
+
+@login_required
+def conta_detalhe(request, id):
+    conta = Conta.objects.get(id=id)
+    if request.method == 'POST':
+        conta.detalhe()
+        return redirect('core_lista_contas')
+    else:
+        return render(request, 'core/detail_conta.html', {'conta': conta})
 
 @login_required
 def mensalidade_detalhe(request, id):
@@ -101,3 +139,12 @@ def mensalidade_delete(request, id):
         return redirect('core_lista_mensalidades')
     else:
         return render(request, 'core/delete_mensalidade_confirm.html', {'mensalidade': mensalidade})
+
+@login_required
+def conta_delete(request, id):
+    conta = Conta.objects.get(id=id)
+    if request.method == 'POST':
+        conta.delete()
+        return redirect('core_lista_contas')
+    else:
+        return render(request, 'core/delete_conta_confirm.html', {'conta': conta})

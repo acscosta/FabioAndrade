@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<br>
+<h2>Atualizando Conta: {{ conta }}</h2>
+<br>
+
+<form action="{% url 'core_conta_update' conta.id %}" method="POST">
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+<button type="submit" class="btn btn-outline-info">Salvar</button>
+<button class="btn btn-outline-info"><a href="{% url 'core_conta_delete' conta.id %}">Deletar</a></button>
+</form>
+
+
+
+{% endblock %}

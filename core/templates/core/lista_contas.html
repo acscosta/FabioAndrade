@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+<br>
+    <div class="row">
+        <div class="col-12">
+            <h1>Lista Contas</h1>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+                    <form action="{% url 'core_conta_novo' %}" method="POST">
+    {% csrf_token %}
+
+    {{ form|bootstrap }}
+
+    <button type="submit" class="btn btn-outline-info">Cadastrar</button>
+</form>
+        </div>
+        <div class="col-sm-6">
+            <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Conta</th>
+        <th scope="col">Mês</th>
+      <th scope="col">Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for conta in contas %}
+    <tr>
+      <th scope="row">{{conta.id}}</th>
+        <td> <a href="{% url 'core_conta_detalhe' conta.id %}">{{conta.pagar}}</a></td>
+        <td>{{conta.mes}}</td>
+      <td>{{conta.categoria}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+        </div>
+
+
+{% endblock %}

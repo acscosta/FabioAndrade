@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<br>
+<h2>Tem certeza que quer deletar: {{conta}}</h2>
+
+
+<form method="POST" action="{% url 'core_conta_delete' conta.id %}" >
+    {% csrf_token %}
+    <button type="submit" class="btn btn-outline-info">Deletar</button>
+
+</form>
+
+{% endblock %}

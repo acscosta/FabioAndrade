@@ -61,3 +61,47 @@ class Mensalidade(models.Model):
 
     def __str__(self):
         return self.aluno.nome + ' - ' + self.mes
+
+class Conta(models.Model):
+    CONTA_APAGAR = (
+        ('LUZ', 'Luz'),
+        ('AGUA', 'Agua'),
+        ('TELEFONE', 'Telefone'),
+        ('CARRO', 'Carro'),
+        ('NET', 'Net'),
+        ('NU', 'Nu'),
+        ('KITNET', 'Kitnet'),
+
+
+ )
+
+    CATEGORIA = (
+        ('PESSOAL', 'Pessoal'),
+        ('ACADEMIA', 'Academia'),
+
+ )
+
+    MESES_ANO = (
+        ('JANEIRO', 'Janeiro'),
+        ('FEVEREIRO', 'Fevereiro'),
+        ('MARÇO', 'Março'),
+        ('ABRIL', 'Abril'),
+        ('MAIO', 'Maio'),
+        ('JUNHO', 'Junho'),
+        ('JULHO', 'Julho'),
+        ('AGOSTO', 'Agosto'),
+        ('SETEMBRO', 'Setembro'),
+        ('OUTUBRO', 'Outubro'),
+        ('NOVEMBRO', 'Novembro'),
+        ('DEZEMBRO', 'Dezembro'),
+
+    )
+
+    pagar = models.CharField(max_length=100, choices=CONTA_APAGAR, verbose_name="Contas")
+    categoria = models.CharField(max_length=100, choices=CATEGORIA, verbose_name="Categoria")
+    mes = models.CharField(max_length=100, choices=MESES_ANO, verbose_name="Mês")
+    dataPagamento = models.DateTimeField(verbose_name="Data de Pagamento")
+    valorPago = models.CharField(max_length=20, verbose_name="Valor Pago" )
+
+    def __str__(self):
+        return self.pagar + ' - ' + self.mes

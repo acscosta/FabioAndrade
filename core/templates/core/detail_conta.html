@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<br>
+<br>
+
+<h2>Conta - {{conta}}</h2>
+
+<form method="POST" action="{% url 'core_conta_detalhe' conta.id %}" >
+
+    <br>
+    <h6>Nome - {{conta.pagar}}</h6>
+    <h6>Mês - {{conta.mes}}</h6>
+    <h6>Data Pagamento - {{conta.dataPagamento}}</h6>
+    <h6>Valor Pago - {{conta.valorPago}}</h6>
+    <h6>Categoria - {{conta.categoria}}</h6>
+
+<br>
+    {% csrf_token %}
+<button class="btn btn-outline-info"><a href="{% url 'core_conta_update' conta.id %}">Atualizar</a></button>
+<button class="btn btn-outline-info"><a href="{% url 'core_conta_delete' conta.id %}">Deletar</a></button>
+
+</form>
+
+
+{% endblock %}
